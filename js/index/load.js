@@ -1,0 +1,57 @@
+window.onload=function(){
+	if(getCookie('refreshToken')==''){
+		open("view/login.html")
+	}else if(getCookie('accessToken')==''){
+		var t=new Date().getTime();
+		$.ajax({
+			type:'POST',
+			async:false,
+			url:'http://106.14.251.28:8081/userCenter/user/refreshToken',
+			data:{
+				'refreshToken':getCookie('refreshToken'),
+				'accessToken':getCookie('accessToken2'),
+				'msgId':t+''
+			},
+			success:function(json){
+				if(json.retCode==0000){
+					setCookie('accessToken',json.accessToken,7);
+					setCookie('accessToken2',json.accessToken,28);
+					setCookie('refreshToken',json.refreshToken,28);
+					getPorts(getCookie('accessToken'));
+					getUserInfo(function(data){
+						setCookie('accountType',data.companyType,28);
+						open("view/interface.html");
+					})
+				}else{
+					open("view/login.html")
+				}
+			},
+		});
+	}else{
+		var t=new Date().getTime();
+		$.ajax({
+			type:'POST',
+			async:false,
+			url:'http://106.14.251.28:8081/userCenter/user/refreshToken',
+			data:{
+				'refreshToken':getCookie('refreshToken'),
+				'accessToken':getCookie('accessToken'),
+				'msgId':t+''
+			},
+			success:function(json){
+				if(json.retCode==0000){
+					setCookie('accessToken',json.accessToken,7);
+					setCookie('accessToken2',json.accessToken,28);
+					setCookie('refreshToken',json.refreshToken,28);
+					getPorts(getCookie('accessToken'));
+					getUserInfo(function(data){
+						setCookie('accountType',data.companyType,28);
+						open("view/interface.html");
+					})
+				}else{
+					open("view/login.html")
+				}
+			},
+		});
+	}
+};

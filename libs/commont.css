@@ -1,0 +1,133 @@
+header.mui-bar{
+	background:#fff;
+	height:44px;
+	border-bottom:1px solid #e4e4e4;
+	box-shadow: none;
+}
+header.mui-bar>.mui-title{
+	color:#333;
+	margin:0 8px;
+	line-height: 44px;
+	font-size:18px;
+	font-weight: bold;		
+}
+header>.mui-icon-arrowleft{
+	color:#999;
+}
+header>.mui-pull-right{
+	line-height:44px;
+	color:#333;
+}
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
+	background: none !important;
+	text-shadow: none;
+}
+.ui-checkbox{
+	margin: 0;
+	position: static;
+}
+.ui-checkbox input, .ui-radio input{
+	margin:0;
+}
+body{
+	background:#f2f2f2;
+}
+.mui-content,
+div[data-role="page"]{
+	background:#f2f2f2;
+}
+.mui-content .mui-table-view:before,
+.mui-content .mui-table-view:after{
+	height:0;
+}
+.ui-page-theme-a a:active, html .ui-bar-a a:active, html .ui-body-a a:active, html body .ui-group-theme-a a:active,.ui-page-theme-a a:hover, html .ui-bar-a a:hover, html .ui-body-a a:hover, html body .ui-group-theme-a a:hover{
+	color:#fea92b
+}
+.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited{
+	color:#797979;
+}
+.ui-input-has-clear{
+	padding:0;
+}
+.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a,.ui-shadow,.ui-input-has-clear input{
+	border-radius:5px;
+	text-shadow:none;
+	box-shadow: none;
+}
+.ui-shadow-inset{
+	box-shadow: none;
+	margin:0;
+}
+.ui-mobile a img, .ui-mobile fieldset{
+	border-width:none
+}
+.mui-input-group:before,
+.mui-input-group:after,
+.mui-input-group .mui-input-row:after,
+.mui-input-group .mui-button-row:after{
+	height:0;
+}
+.mui-bar.mui-bar-footer{
+	background:#fea92b;
+	box-shadow: none;
+}
+.mui-bar.mui-bar-footer .mui-title{
+	color:#fff;
+}
+.top_comment .mui-content .mui-scroll-wrapper{
+	top:44px;
+}
+.mui-table-view-chevron .mui-table-view-cell{
+	padding-right:15px
+}
+@media all and (max-width: 320px) {
+	.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+		font-size:12px;
+	}
+	.mui-content .mui-scroll-wrapper h4{
+		font-size:16px;
+	}
+	#College_detail .mui-content .mui-scroll-wrapper .mui-scroll h2{
+		font-size:14px;
+	}
+}
+@keyframes shun{
+	from{
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+	}
+	to{
+		transform:rotate(360deg);
+		-webkit-transform:rotate(360deg);
+	}
+}
+@-webkit-keyframes shun{
+	from{
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+	}
+	to{
+		transform:rotate(360deg);
+		-webkit-transform:rotate(360deg);
+	}
+}
+@keyframes ni{
+	from{
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+	}
+	to{
+		transform:rotate(360deg);
+		-webkit-transform:rotate(360deg);
+	}
+}
+@-webkit-keyframes ni{
+	from{
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+	}
+	to{
+		transform:rotate(-360deg);
+		-webkit-transform:rotate(-360deg);
+	}
+}
