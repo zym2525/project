@@ -9,18 +9,18 @@
 	<body style="visibility: hidden;" data-theme='m' data-role='none'>
 		<div data-role="page" id="login" data-dom-cache="true">
 		<style type="text/css">
-			.wrap{
+			#login .wrap{
 				width:100%;
 				height: 13.34rem;
 				margin: 0 auto;
 				display: flex;
 				flex-direction: column;
 			}
-			.header{
+			#login .header{
 				width: 7.5rem;
 				height: 2.5rem;
 			}
-			.content{
+			#login .content{
 				flex: 1;
 				/*height: 100%;*/
 				width: 100%;
@@ -31,24 +31,24 @@
 				justify-content: center;
 				position: relative;
 			}
-			.content .logo{
+			#login .content .logo{
 				position: absolute;
 				top: 1.3rem;
 				left: 50%;
 				margin-left: -1.01rem;
 			}
-			.content .logo img{
+			#login .content .logo img{
 				width: 2.02rem;
 			}
-			.content .form{
+			#login .content .form{
 				position: absolute;
 				top: 4.5rem;
 				left: 1.64rem;
 			}
-			.content .form div{
+			#login .content .form div{
 				position: relative;
 			}
-			.content .form div input{
+			#login .content .form div input{
 				width: 4.91rem !important;
 				height: 0.56rem !important;
 				font-size: 0.32rem !important;
@@ -57,10 +57,10 @@
 				color: #7c7c7c !important;
 				box-sizing: border-box !important;
 			}
-			.content .form .user{
+			#login .content .form .user{
 				margin-bottom: 0.64rem;
 			}
-			.content .form div span{
+			#login .content .form div span{
 				font-size: 0.32rem;
 				line-height: 0.56rem;
 				color: rgba(153,153,153,0.7);
@@ -68,7 +68,7 @@
 				left: 0;
 				top: 0;
 			}
-			.content .form div i{
+			#login .content .form div i{
 				width: 0.6rem;
 				height: 0.6rem;
 				background: url(../img/login/icon1.png) no-repeat;
@@ -77,11 +77,11 @@
 				left: -0.78rem;
 				top: 0;
 			}
-			.content .form .password i{
+			#login .content .form .password i{
 				background: url(../img/login/icon2.png) no-repeat;
 				background-size: cover;
 			}
-			.content .form .submit{
+			#login .content .form .submit{
 				display: block;
 				width: 5.6rem;
 				height: 0.9rem;
@@ -94,49 +94,33 @@
 				margin-top: 0.62rem;
 				margin-left: -0.69rem;
 			}
-			.content .form a{
+			#login .content .form a{
 				position: absolute;
 				right: 0;
 				bottom: -0.54rem;
 				font-size: 0.28rem;
 				color: #999;
 			}
-			#hint{
-				height: 1rem;
-				border-radius: 0.2rem;
-				text-align: center;
-				font-size: 0.36rem;
-				line-height: 1rem;
-				color: #e4ede9;
-				padding: 0 0.3rem;
-				background-color: #323232;
-				position: fixed;
-				left: 50%;
-				/*margin-left: -1.5rem;*/
-				top: 30%;
-				display: none;
-				z-index: 111;
-			}
-			.footer{
+			#login .footer{
 				width: 100%;
 				height: 0.66rem;
 				display: flex;
 				justify-content: center;
 			}
-			.footer .language_box div{
+			#login .footer .language_box div{
 				width: 0.14rem;
 			}
-			.footer .language_box span{
+			#login .footer .language_box span{
 				font-size: 0.32rem;
 				color: #097b47;
 				font-weight: bold;
 			}
-			.footer .language_box .language_name{
+			#login .footer .language_box .language_name{
 				display: block;
 				text-decoration: underline;
 				margin-top: 1px;
 			}
-			.language_box{
+			#login .language_box{
 				width: 2rem;
 				display: flex;
 				justify-content: center;
@@ -144,7 +128,7 @@
 		</style>
 		<div id="hint"></div>
 		<div class="wrap" data-role='none'>
-			<img src="../img/login/bg.png" alt="bg" class="header"/>
+			<img src="../img/login/bg.png" alt="bg" class="header" style="display: block;"/>
 			<div class="content" id="content" >
 				<h1 class="logo" id="logo">
 					<img src="../img/login/logo.png" alt="logo"/>
@@ -177,6 +161,12 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			var screeHeight=document.documentElement.clientHeight;
+			/*获取顶部导航高度*/
+			//给local添加高度
+			$(".wrap").css("min-height",screeHeight);
+		</script>
 		<script src="../js/login/getPorts.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/login/userLoad.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/login/language.js" type="text/javascript" charset="utf-8"></script>

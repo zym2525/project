@@ -5,11 +5,11 @@
 		init();
 	})
 	function init(){
-		$('footer div').removeClass('active');
-		$('.enterances').hide();
-		$('.header').hide();
-		$('footer div').eq(getCookie('currentCount')||0).addClass('active');
-		$('.enterances').eq(getCookie('currentCount')||0).show();
-		$('.header').eq(getCookie('currentCount')||0).show();
+		$('#interface footer div').removeClass('active');
+		$('#interface .enterances').hide();
+		$('#interface .header').hide();
+		$('#interface footer div').eq(getCookie('currentCount')||0).addClass('active');
+		$('#interface .enterances').eq(getCookie('currentCount')||0).show();
+		$('#interface .header').eq(getCookie('currentCount')||0).show();
 	}
 })()

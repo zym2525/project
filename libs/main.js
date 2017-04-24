@@ -18,17 +18,16 @@ $(function(){
 		document.getElementsByTagName('body')[0].style.visibility='visible';
 	},1);
 	var lng=getCookie('lng')||'CN';
-	function setLng(){
-		$('*[localeString]').each(function(index,oT){
-			$(oT).html(langText[lng][oT.getAttribute('localeString')])
-		})
-		$('input[localeString]').each(function(index,oT){
-			$(oT).val(langText[lng][oT.getAttribute('localeString')])
-		})
-	}
 	setLng();
 })
-	
+function setLng(){
+	$('*[localeString]').each(function(index,oT){
+		$(oT).html(langText[lng][oT.getAttribute('localeString')])
+	})
+	$('input[localeString]').each(function(index,oT){
+		$(oT).val(langText[lng][oT.getAttribute('localeString')])
+	})
+}	
 function open(address){
 //	location=address
 	$.mobile.changePage(address,{transition:"slide"});

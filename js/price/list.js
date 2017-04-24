@@ -11,7 +11,7 @@
 			$('#list').show();
 		}
 	});
-	$('.arrow').on('touchstart',function(){
+	$('#price .arrow').on('touchstart',function(){
 		sessionStorage.removeItem('currentData');
 		sessionStorage.removeItem('scrollT');
 		window.history.back();
@@ -20,7 +20,7 @@
 		arrSection.sort(function(oSection1,oSection2){
 			return Number(oSection1.getAttribute('cost20gp'))-Number(oSection2.getAttribute('cost20gp'));
 		});
-		$('.content').scrollTop(0);
+		$('#price .content').scrollTop(0);
 		putBasicSchemes();
 		setTimeout(function(){
 			$('#list').hide();
@@ -30,7 +30,7 @@
 		arrSection.sort(function(oSection1,oSection2){
 			return Number(oSection1.getAttribute('sailingday'))-Number(oSection2.getAttribute('sailingday'));
 		});
-		$('.content').scrollTop(0);
+		$('#price .content').scrollTop(0);
 		putBasicSchemes();
 		setTimeout(function(){
 			$('#list').hide();
@@ -40,7 +40,7 @@
 		arrSection.sort(function(oSection1,oSection2){
 			return week[oSection1.getAttribute('customsclearance')]-week[oSection2.getAttribute('customsclearance')];
 		});
-		$('.content').scrollTop(0);
+		$('#price .content').scrollTop(0);
 		putBasicSchemes();
 		setTimeout(function(){
 			$('#list').hide();

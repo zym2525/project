@@ -1,6 +1,6 @@
 function getBasicSchemes(currentPage,fn){
-	var str=window.location.search.substring(1);
-	var arr=str.split('&');
+//	var str=window.location.search.substring(1);
+	var arr=eval(sessionStorage.getItem('dataArr'));
 	var carryCode=arr[2];
 	var t=new Date().getTime();
 	if(carryCode!='0'){

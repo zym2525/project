@@ -8,6 +8,7 @@
 	</head>
 		
 	<body style="visibility: hidden;">
+		<div data-role="page" id="interface" data-dom-cache="true">
 		<div id="shadow">
 			<div id="hint">
 				<input type="text" placeholder="请在此输入" id="text2"/>
@@ -30,11 +31,10 @@
 			</div>
 		</div>
 		<div id="hintBox">询价成功！</div>
-		<div data-role="page" id="interface" data-dom-cache="true">
 		<style type="text/css">
 			.wrap{
 				/*width: 7.5rem;*/
-				height: 13.34rem;
+				/*height: 13.34rem;*/
 				/*margin: 0 auto;*/
 				display: flex;
 				flex-direction: column;
@@ -62,7 +62,7 @@
 				display: none;
 				z-index: 111;
 			}
-			header{
+			#interface header{
 				height: 0.9rem;
 				padding-top: 0.38rem;
 				background-color: #097b47;
@@ -71,18 +71,18 @@
 				align-items: center;
 				position: relative;
 			}
-			header img:first-child{
+			#interface header img:first-child{
 				height: 0.36rem;
 				position: absolute;
 				left: 0.2rem;
 				bottom: 0.26rem;
 				padding: 0.3rem 0.3rem 0 0;
 			}
-			header h2{
+			#interface header h2{
 				font-size: 0.34rem;
 				color: #fff;
 			}
-			header .save,header .search{
+			#interface header .save,header .search{
 				width: 0.4rem;
 				padding-top: 0.2rem;
 				padding-left: 0.2rem;
@@ -322,12 +322,12 @@
 			.enterances4{
 				display: none;
 			}
-			footer{
+			#interface footer{
 				height: 0.98rem;
 				display: flex;
 				justify-content: space-around;
 			}
-			footer div{
+			#interface footer div{
 				font-size: 0.22rem;
 				color: #999;
 				display: flex;
@@ -335,10 +335,10 @@
 				align-items: center;
 				margin-top: 0.13rem;
 			}
-			footer div.active{
+			#interface footer div.active{
 				color: #333;
 			}
-			footer div i{
+			#interface footer div i{
 				display: block;
 				width: 0.46rem;
 				height: 0.46rem;
@@ -346,27 +346,27 @@
 				background-size: cover;
 				margin-bottom: 0.08rem;
 			}
-			footer div.active .icon1{
+			#interface footer div.active .icon1{
 				background-image:url(../img/interface/icon1.png);
 			}
-			footer div .icon2{
+			#interface footer div .icon2{
 				background-image:url(../img/interface/icon2_0.png);
 			}
-			footer div.active .icon2{
+			#interface footer div.active .icon2{
 				background-image:url(../img/interface/icon2.png);
 			}
-			footer div .icon3{
+			#interface footer div .icon3{
 				width: 0.33rem;
 				background-image:url(../img/interface/icon3_0.png);
 			}
-			footer div.active .icon3{
+			#interface footer div.active .icon3{
 				background-image:url(../img/interface/icon3.png);
 			}
-			footer div .icon4{
+			#interface footer div .icon4{
 				width: 0.4rem;
 				background-image:url(../img/interface/icon4_0.png);
 			}
-			footer div.active .icon4{
+			#interface footer div.active .icon4{
 				background-image:url(../img/interface/icon4.png);
 			}
 			#email{
@@ -382,7 +382,7 @@
 				display: none;
 				z-index: 111;
 			}
-			#shadow #hint{
+			#interface #shadow #hint{
 				width: 5.42rem;
 				height: 2.32rem;
 				display: flex;
@@ -392,7 +392,7 @@
 				left: 50%;
 				margin-left: -2.71rem;
 			}
-			#shadow #hint input{
+			#interface #shadow #hint input{
 				width: 100%;
 				background-color: #fff;
 				height: 1.42rem;
@@ -405,7 +405,7 @@
 				border-top-right-radius: 0.18rem;
 				font-weight: bold;
 			}
-			#shadow #hint div{
+			#interface #shadow #hint div{
 				width: 50%;
 				background-color: #fff;
 				text-align: center;
@@ -416,10 +416,10 @@
 				line-height: 0.88rem;
 				border-right: 1px solid #e0e0e0;
 			}
-			#shadow #hint .cancel{
+			#interface #shadow #hint .cancel{
 				border-bottom-left-radius: 0.18rem;
 			}
-			#shadow #hint .confirm{
+			#interface #shadow #hint .confirm{
 				border-bottom-right-radius: 0.18rem;
 				color: #0093ff;
 			}
@@ -526,6 +526,7 @@
 				color: #0093ff;
 			}
 		</style>
+		
 		<div class="wrap">
 			<div class="header" style="display: block;">
 				<header>
@@ -645,6 +646,12 @@
 				</div>
 			</footer>
 		</div>
+		<script type="text/javascript">
+			var screeHeight=document.documentElement.clientHeight;
+			/*获取顶部导航高度*/
+			//给local添加高度
+			$(".wrap").css("min-height",screeHeight);
+		</script>
 		<script src="../js/interface/getEnquirys.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/interface/resource.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/interface/common.js" type="text/javascript" charset="utf-8"></script>
@@ -653,7 +660,9 @@
 		<script src="../js/interface/select.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$('.btn1').on('touchstart',function(){
-				open('price.html?'+$('#pol').attr('code')+'&'+$('#pod').attr('code')+'&'+$('#carrysName').attr('code'))
+				sessionStorage.setItem('dataArr',JSON.stringify([$('#pol').attr('code'),$('#pod').attr('code'),$('#carrysName').attr('code')]))
+//				open('price.html?'+$('#pol').attr('code')+'&'+$('#pod').attr('code')+'&'+$('#carrysName').attr('code'))
+				open('price.html')
 				return false;
 			});
 		</script>

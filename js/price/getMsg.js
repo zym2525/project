@@ -1,30 +1,29 @@
 $(function(){
-	
 	if(sessionStorage.getItem('scrollT')){
 		setBasicSchemes(eval(sessionStorage.getItem('currentData')))
-		$('.content').scrollTop(sessionStorage.getItem('scrollT'));
+		$('#price .content').scrollTop(sessionStorage.getItem('scrollT'));
 	}else{
 		getBasicSchemes(iNum,setBasicSchemes);
 	}
-	$('.content').on('scroll',function(){
+	$('#price .content').on('scroll',function(){
 		if(($(this)[0].scrollHeight-50)<=($(this).height()+$(this).scrollTop())){
 			iNum+=1;
 			getBasicSchemes(iNum,setBasicSchemes);
+			$('#price .content').scrollTop($('#price .content').scrollTop()+50)
 		}
-		$('.content').scrollTop($('.content').scrollTop+50)
 	})
 	
 })
 function setBasicSchemes(data){
 	for(var i=0;i<data.length;i++){
 		currentData.push(data[i]);
-		var oSection=templateSchemes('tpl',data[i]);
+		var oSection=templateSchemes('tplE',data[i]);
 		arrSection.push(oSection);
 	}
 	putBasicSchemes();
 }
 function putBasicSchemes(){
-	var oContent=document.getElementById('content');
+	var oContent=document.getElementById('contentPrice');
 	oContent.innerHTML='';
 	for(var i=0;i<arrSection.length;i++){
 		oContent.appendChild(arrSection[i]);
@@ -66,7 +65,7 @@ function templateSchemes(id,json){
     	sessionStorage.setItem('currentData',JSON.stringify(currentData));
     	sessionStorage.setItem('scrollT',$('.content').scrollTop())
     	sessionStorage.setItem('schemes',JSON.stringify(json));
-    	open('../08Freight-details/08.html');
+    	open('Freight-details.html');
     })
     return oSection;
 }

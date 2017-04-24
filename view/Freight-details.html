@@ -4,31 +4,242 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../libs/base.css"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	<body style="visibility: hidden;">
+		<div data-role="page" id="details" data-dom-cache="true">
+		<style type="text/css">
+			#details .wrap{
+				width: 7.5rem;
+				margin: 0 auto;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+			}
+			#details header{
+				height: 4.08rem;
+				padding: 0.38rem 0.24rem 0;
+				background-color: #097b47;
+				position: relative;
+			}
+			#details header .arrow{
+				width: 0.24rem;
+				height: 0.36rem;
+				padding-top: 0.2rem;
+				padding-bottom: 0.2rem;
+				padding-right: 0.3rem;
+				position: absolute;
+				left: 0.2rem;
+				top: 0.45rem;
+			}
+			#details header h2{
+				font-size: 0.34rem;
+				color: #fff;
+				margin: 0.3rem 0 0.42rem;
+				text-align: center;
+			}
+			#details header .bg{
+				width: 7.02rem;
+				height: 2.82rem;
+				background: url(../img/bg.png) no-repeat center;
+				background-size: cover;
+				position: relative;
+				font-size: 0.26rem;
+				color:#a1a1a1 ;
+			}
+			#details header .bg .line{
+				width: 6.74rem;
+				height: 1px;
+				background: url(../img/line.png) no-repeat;
+				position: absolute;
+				top: 0.5rem;
+				left: 0.14rem;
+			}
+			#details header .destination{
+				display: flex;
+				position: absolute;
+				top: 0.51rem;
+				left: -0.2rem;
+			}
+			#details header .destination .start_box,header .destination .end_box{
+				width: 2.78rem;
+				height: 0.88rem;
+				padding: 0.61rem 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				margin-left: 0.18rem;
+			}
+			#details header .destination .end_box{
+				margin-left:0;
+				margin-right: 0.18rem;
+			}
+			#details header .destination .start_box .start,header .destination .end_box .end{
+				display: flex;
+				justify-content: center;
+				font-size: 0.28rem;
+				line-height: 0.28rem;
+			}
+			#details header .destination .start_box .start img,header .destination .end_box .end img{
+				width: 0.26rem;
+				height: 0.26rem;
+				margin-right: 0.16rem;
+			}
+			#details header .destination .start_box .name,header .destination .end_box .name{
+				font-size:0.28rem;
+				color: #2e3f51;
+				font-weight: bold;
+				text-align: center;
+			}
+			#details header .destination .icon{
+				width: 1.46rem;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			#details header .destination .icon img:first-child{
+				width: 0.44rem;
+				height: 0.47rem;
+				margin-bottom: 0.14rem;
+			}
+			#details header .destination .icon img:last-child{
+				width: 1.46rem;
+				height: 0.11rem;
+			}
+			#details .content{
+				background-color: #f3f5f7;
+				flex: 1;
+				overflow-x: hidden;
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch;
+			}
+			#details .block{
+				margin-top: 0.18rem;
+				color: #333;
+				background-color: #fff;
+			}
+			#details .block dt{
+				height: 0.72rem;
+				margin-left: 0.1rem;
+				position: relative;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			#details .block dt .l{
+				width: 7.4rem;
+				height: 1px;
+				background: url(../img/line.png) no-repeat;
+				position: absolute;
+				bottom:-1px;
+				left: 0;
+			}
+			#details .block dt em{
+				font-size: 0.28rem;
+			}
+			#details .block dt span{
+				font-size: 0.24rem;
+				color: #999;
+				margin-left: 0.1rem;
+			}
+			#details .block dt .s{
+				display: block;
+				width: 0.05rem;
+				height: 0.2rem;
+				background-color: #2e3f51;
+				border-radius: 0.02rem;
+				margin: 0 0.1rem 0 0.16rem;
+			}
+			#details .block dd{
+				height: 0.88rem;
+				width: 7.02rem;
+				margin-left: 0.24rem;
+				line-height: 0.88rem;
+				border-bottom: 1px solid #dcdcdc;
+				font-size: 0.28rem;
+			}
+			#details .block .cb{
+				border-bottom:none;
+			}
+			#details .block dd .val{
+				color: #999;
+			}
+			#details .block dd img{
+				width: 0.5rem;
+				margin: 0.19rem 0.18rem 0 -0.06rem;
+			}
+			#details .freight dd{
+				width: 100%;
+				margin: 0;
+			}
+			#details .freight dd ul{
+				display: flex;
+				margin-top: 0.3rem;
+			}
+			#details .freight dd ul li{
+				flex: 1;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 0.74rem;
+				border-right: 1px solid #dcdcdc;
+			}
+			#details .freight dd ul li.cr{
+				border-right:none;
+			}
+			#details .freight dd ul li .kind{
+				color: #666;
+				font-size: 0.24rem;
+			}
+			#details .freight dd ul li .price{
+				color: #1eb389;
+				font-size: 0.32rem;
+			}
+			#details footer{
+				height: 2.5rem;
+				background-color: #f3f5f7;
+				text-align: center;
+			}
+			#details footer div{
+				display: block;
+				width: 7.1rem;
+				height: 0.9rem;
+				border-radius: 0.06rem;
+				text-align: center;
+				line-height: 0.9rem;
+				font-size: 0.34rem;
+				color: #fff;
+				background-color: #2e3f51;
+				margin: 0.32rem auto 0.57rem;
+			}
+			#details footer span{
+				font-size: 0.3rem;
+				color: #666;
+			}
+		</style>
 		<div class="wrap">
 			<header>
-				<img src="img/arrow2.png" alt="arrow" class="arrow"/>
+				<img src="../img/arrow2.png" alt="arrow" class="arrow"/>
 				<h2 localeString='title'>运价详细</h2>
 				<div class="bg">
 					<div class="line"></div>
 					<ul class="destination">
 						<li class="start_box">
 							<div class="start">
-								<img src="img/start.png" alt="start"/>
+								<img src="../img/start.png" alt="start"/>
 								<span localeString='field1'>起运港</span>
 							</div>
 							<div class="name">{{polName}}</div>
 						</li>
 						<li class="icon">
-							<img src="img/ship_main.png" alt="ship_main"/>
-							<img src="img/arrow.png" alt="arrow"/>
+							<img src="../img/ship_main.png" alt="ship_main"/>
+							<img src="../img/arrow.png" alt="arrow"/>
 						</li>
 						<li class="end_box">
 							<div class="end">
-								<img src="img/finish.png" alt="finish"/>
+								<img src="../img/finish.png" alt="finish"/>
 								<span localeString='field2'>目的港</span>
 							</div>
 							<div class="name">{{podName}}</div>
@@ -44,27 +255,27 @@
 						<i class="l"></i>
 					</dt>
 					<dd class="clearfix">
-						<img src="img/icon1.png" alt="icon1" class="fl"/>
+						<img src="../img/detail/icon1.png" alt="icon1" class="fl"/>
 						<span class="name fl" localeString='field3'>船公司</span>
 						<span class="val fr">{{carryCode}}</span>
 					</dd>
 					<dd class="clearfix">
-						<img src="img/icon2.png" alt="icon2" class="fl"/>
+						<img src="../img/detail/icon2.png" alt="icon2" class="fl"/>
 						<span class="name fl" localeString='field4'>中转港</span>
 						<span class="val fr">{{potName}}</span>
 					</dd>
 					<dd class="clearfix">
-						<img src="img/icon3.png" alt="icon3" class="fl"/>
+						<img src="../img/detail/icon3.png" alt="icon3" class="fl"/>
 						<span class="name fl" localeString='field5'>船程</span>
 						<span class="val fr">{{sailingDay}}</span>
 					</dd>
 					<dd class="clearfix">
-						<img src="img/icon4.png" alt="icon4" class="fl"/>
+						<img src="../img/detail/icon4.png" alt="icon4" class="fl"/>
 						<span class="name fl" localeString='field6'>开船</span>
 						<span class="val fr">{{etd}}</span>
 					</dd>
 					<dd class="clearfix cb">
-						<img src="img/icon5.png" alt="icon5" class="fl"/>
+						<img src="../img/detail/icon5.png" alt="icon5" class="fl"/>
 						<span class="name fl" localeString='field7'>截关</span>
 						<span class="val fr">{{customsClearance}}</span>
 					</dd>
@@ -99,7 +310,7 @@
 				</dl>
 				<dl class="msg block" style="margin-top: 0;">
 					<dd class="clearfix cb">
-						<img src="img/icon6.png" alt="icon6" class="fl"/>
+						<img src="../img/detail/icon6.png" alt="icon6" class="fl"/>
 						<span class="name fl" localeString='field8'>有效期</span>
 						<span class="val fr">{{expireDate}}</span>
 					</dd>
@@ -110,43 +321,24 @@
 						<em localeString='field10'>附加费</em>
 						<i class="l"></i>
 					</dt>
-					<!--<dd class="clearfix">
-						<span class="name fl" localeString='field11'>订舱费</span>
-						<span class="val fr">￥170/350</span>
-					</dd>
-					<dd class="clearfix">
-						<span class="name fl">HTC</span>
-						<span class="val fr">￥170/350</span>
-					</dd>
-					<dd class="clearfix">
-						<span class="name fl">CIC</span>
-						<span class="val fr">￥170/350</span>
-					</dd>
-					<dd class="clearfix">
-						<span class="name fl">EBS</span>
-						<span class="val fr">￥170/350</span>
-					</dd>
-					<dd class="clearfix">
-						<span class="name fl">DOC</span>
-						<span class="val fr">￥170/350</span>
-					</dd>
-					<dd class="clearfix cb">
-						<span class="name fl">CAF</span>
-						<span class="val fr">￥170/350</span>
-					</dd>                    -->
 				</dl>
 			</section>
 			<footer>
-				<div localeString='field13' id="btn">详细询价</div>
+				<div localeString='field13' id="btn">返回首页</div>
 				<span><span localeString='field15'>询价热线：</span><span id="tel">400-8888-888</span></span>
 			</footer>
 		</div>
+		<script type="text/javascript">
+			var screeHeight=document.documentElement.clientHeight;
+			/*获取顶部导航高度*/
+			//给local添加高度
+			$(".wrap").css("min-height",screeHeight);
+			$(".wrap").css("height",screeHeight);
+		</script>
+		<script src="../js/details/resource.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/details/common.js" type="text/javascript" charset="utf-8"></script>
+		</div>
 	</body>
-	<script src="../libs/zepto.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../libs/main.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../libs/cookie.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/resource.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../libs/setLanguage.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	
 	
 </html>

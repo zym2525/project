@@ -80,6 +80,9 @@ div[data-role="page"]{
 .mui-table-view-chevron .mui-table-view-cell{
 	padding-right:15px
 }
+.ui-mobile .ui-page-active{
+	overflow: hidden;
+}
 @media all and (max-width: 320px) {
 	.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
 		font-size:12px;

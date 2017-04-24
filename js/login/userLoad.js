@@ -91,6 +91,7 @@ function show(ele){
 						$('#hint').hide();
 						oUser.val('');
 						oPassword.val('');
+						oUser.find('span').show()
 						open("interface.html");
 						bSin=false;
 					}else{
