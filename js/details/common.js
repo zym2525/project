@@ -1,4 +1,9 @@
 $(function(){
+//	var oBtn=document.getElementById('btn');
+//	
+//	oBtn.addEventListener('touchstart',function(){
+//		
+//	},false)
 	var data=JSON.parse(sessionStorage.getItem('schemes'));
 	setCookie('schemeCode',data.schemeCode);
 	$('#details #hyfCurrency').html(arrHyfCurrency[data['feesList'][0]['currency']]);

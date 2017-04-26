@@ -1,17 +1,23 @@
 $(function(){
-	if(sessionStorage.getItem('scrollT')){
-		setBasicSchemes(eval(sessionStorage.getItem('currentData')))
-		$('#price .content').scrollTop(sessionStorage.getItem('scrollT'));
-	}else{
-		getBasicSchemes(iNum,setBasicSchemes);
-	}
-	$('#price .content').on('scroll',function(){
-		if(($(this)[0].scrollHeight-50)<=($(this).height()+$(this).scrollTop())){
-			iNum+=1;
+	$(document).on("pageshow","#price",function(){
+		currentData=[];
+		
+		if(sessionStorage.getItem('scrollT')){
+			setBasicSchemes(eval(sessionStorage.getItem('currentData')))
+			$('#price .content').scrollTop(sessionStorage.getItem('scrollT'));
+		}else{
+			console.log(1)
 			getBasicSchemes(iNum,setBasicSchemes);
-			$('#price .content').scrollTop($('#price .content').scrollTop()+50)
 		}
+		$('#price .content').on('scroll',function(){
+			if(($(this)[0].scrollHeight-50)<=($(this).height()+$(this).scrollTop())){
+				iNum+=1;
+				getBasicSchemes(iNum,setBasicSchemes);
+				$('#price .content').scrollTop($('#price .content').scrollTop()+50)
+			}
+		})
 	})
+	
 	
 })
 function setBasicSchemes(data){

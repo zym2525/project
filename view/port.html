@@ -4,10 +4,251 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../libs/base.css"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	<body style="visibility: hidden;">
+		<div data-role="page" id="port" data-dom-cache="true">
+		<style type="text/css">
+			#port .wrap{
+				width: 7.5rem;
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+			}
+			#port header{
+				height: 0.9rem;
+				padding-top: 0.38rem;
+				background-color: #097b47;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+			}
+			#port header img{
+				width: 0.24rem;
+				height: 0.36rem;
+				padding-top: 0.2rem;
+				padding-bottom: 0.2rem;
+				padding-right: 0.5rem;
+				position: absolute;
+				left: 0.2rem;
+				top: 0.45rem;
+			}
+			#port header h2{
+				font-size: 0.34rem;
+				color: #fff;
+			}
+			#port .content{
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				overflow: hidden;
+			}
+			#port .search{
+				/*display: flex;*/
+				/*justify-content: center;*/
+				height: 0.8rem;
+				/*align-items:center;*/
+				position: relative;
+			}
+			#port .search input{
+				width: 6.43rem;
+				height: 0.58rem;
+				background-color: #f3f5f7;
+				padding-left: 0.67rem;
+				color: #aaa;
+				line-height: 0.58rem;
+				border-radius: 0.06rem;
+				font-size: 0.32rem;
+			}
+			#port .search .text_box{
+				text-align: center;
+				margin: 0.11rem auto 0.11rem;
+				position: relative;
+			}
+			#port .search .text_box span{
+				color: #aaa;
+				position: absolute;
+				font-size: 0.2rem;
+				line-height: 0.58rem;
+				left: 0.68rem;
+				top: 50%;
+				margin-top: -0.29rem;
+				font-size: 0.32rem;
+			}
+			#port .search img{
+				position: absolute;
+				width: 0.32rem;
+				left: 0.35rem;
+				bottom: 0.25rem;
+			}
+			#port .content .container{
+				background-color: #f3f5f7;
+				flex: 1;
+				display:flex;
+				flex-direction: column;
+				color: #333;
+			}
+			#port .content .container .line{
+				height: 1px;
+				background-color: #ccc;
+			}
+			#port .content .container .header_box{
+				display: flex;
+			}
+			#port .content .container .header_box>.header{
+				flex: 1;
+				text-align: center;
+				height: 0.8rem;
+				line-height:  0.8rem;
+				font-size: 0.32rem;
+				box-sizing: border-box;
+			}
+			#port .content .container .header_box>.header.active{
+				color: #1eb389;
+				border-bottom: 0.03rem solid #1eb389;
+			}
+			#port .content .container .enterances1{
+				overflow: hidden;
+			}
+			#port .content .container .enterances2,.content .container .enterances1 .country{
+				overflow-x: hidden;
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch;
+				height: 11.5rem;
+			}
+			#port .content .container .enterances2{
+				position: relative;
+				flex: 1;
+			}
+			#port .content .container .enterances2 .block2{
+				display: flex;
+				flex-direction: column;
+				background-color: #fff;
+				border-bottom: 0.01rem solid #dcdcdc;
+			}
+			#port .content .container .enterances2 .block2 dt{
+				background-color: #f3f5f7;
+				font-size: 0.2rem;
+				color: #666;
+				position: relative;
+				height: 0.76rem;
+			}
+			#port .content .container .enterances2 .block2 dt span{
+				position: absolute;
+				left: 0.3rem;
+				bottom: 0.2rem;
+			}
+			#port .content .container .enterances2 .block2 dd{
+				flex: 1;
+				margin-left: 0.36rem;
+				border-bottom: 0.01rem solid #dcdcdc;
+				font-size: 0.28rem;
+				color: #333;
+				height: 0.89rem;
+				line-height: 0.9rem;
+			}
+			#port .content .container .enterances2 .block2 .cb{
+				border-bottom:none;
+			}
+			#port .content .container .enterances2 .block2 dd span{
+				margin-left: -0.08rem;
+			}
+			#port .container .sidebar{
+				width: 0.2rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				height: 7.8rem;
+				position: fixed;
+				right: 0.28rem;
+				top: 3rem;
+				z-index: 111;
+			}
+			#port .container .sidebar a{
+				display: block;
+				font-size: 0.24rem;
+				line-height: 0.24rem;
+				color: #1eb389;
+			}
+			#port .content .container .enterances1{
+				flex: 1;
+				margin-top: 0.22rem;
+				background-color: #fff;
+			}
+			#port .content .container .enterances1 .tab{
+				display: flex;
+				height: 100%;
+				flex: 1;
+			}
+			#port .content .container .enterances1 .tab .box{
+				height: 100%;
+				width: 1.88rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+			}
+			#port .content .container .enterances1 .tab .box .header{
+				height: 0.89rem;
+				border-bottom: 0.01rem solid #dcdcdc;
+				text-align: center;
+				line-height: 0.9rem;
+				font-size: 0.26rem;
+			}
+			#port .content .container .enterances1 .tab .box .header.active{
+				color:#1eb389;
+				background-color: #f3f5f7;
+			}
+			#port .content .container .enterances1 .tab .country{
+				flex: 1;
+				padding-top: 0.04rem;
+				background-color: #f3f5f7;
+				display: none;
+				height: 100%;
+			}
+			#port .content .container .enterances1 .tab .country li{
+				height: 0.79rem;
+				padding-left: 0.44rem;
+				/*border-bottom: 0.01rem solid #dcdcdc;*/
+				line-height: 0.8rem;
+				font-size: 0.26rem;
+				background-color: #f3f5f7;
+				position: relative;
+			}
+			#port .content .container .enterances1 .tab .country li:after{
+				content:"";
+				position: absolute;
+				right: 0;
+				bottom: -1px;
+				width: 5.18rem;
+				height: 1px;
+				background-color:#dcdcdc;
+				z-index: 222;
+			}
+			#port .content .container .enterances1 .tab .country li.cb:after{
+				height: 0;
+			}
+			@media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2){
+				#port .container .sidebar{
+					width: 0.2rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					align-items: center;
+					height: 5.8rem;
+					position: fixed;
+					right: 0.28rem;
+					top: 2.4rem;
+				}
+				#port .container .sidebar a{
+					display: block;
+					font-size: 0.16rem;
+					line-height: 0.16rem;
+					color: #1eb389;
+				}
+			}
+		</style>
 		<div class="wrap">
 			<header>
 				<img src="../img/arrow2.png" alt="arrow" class="comeback"/>
@@ -79,20 +320,18 @@
 				</section>
 			</section>
 		</div>
-		<script src="../libs/zepto.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../libs/cookie.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/getPorts.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../libs/main.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/resource.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../libs/setLanguage.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/focus.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/tab.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-//			$('#enterances2').scroll(function(){
-//				console.log($('#enterances2').scrollTop())
-//			});
-			
+			var screeHeight=document.documentElement.clientHeight;
+			$("#port .wrap").css("min-height",screeHeight);
+			$("#port .wrap").css("height",screeHeight);
+			$("input").attr('data-role','none');  
+			$("select").attr('data-role','none');
 		</script>
+		<script src="../js/port/getPorts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/port/resource.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/port/focus.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/port/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/port/tab.js" type="text/javascript" charset="utf-8"></script>
+		</div>
 	</body>
 </html>

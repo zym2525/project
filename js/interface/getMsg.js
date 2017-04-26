@@ -1,8 +1,8 @@
 $(function(){
 //	$('#btnEnquirys').on('touchstart',function(){
 		var port=getCookie('port')||'DUBAI';
-		$('#pod').html(port);
-		$('#pod').attr('code',getCookie('code')||'AEDUB');
+		$('#interface #pod').html(port);
+		$('#interface #pod').attr('code',getCookie('code')||'AEDUB');
 		removeCookie('local');
 		var bSinEnquirys=false;
 		var bSinlogistics=false;

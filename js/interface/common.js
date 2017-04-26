@@ -11,7 +11,7 @@ $('#exchange').on('touchstart',function(){
 //选择目的港
 $('#end_box').on('touchstart',function(){
 	setCookie('local',window.location.href,28)
-	open("port.html");
+	open('port.html');
 })
 //选择船公司
 $('#carrys').on('touchstart',function(){
