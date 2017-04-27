@@ -27,17 +27,3 @@ var langText={
 		'list3':'截关日期优先',
 	}
 }
-//询盘容器
-var arrSection=[];
-var pageSize=3;
-var iNum=0;
-var week={
-	'周日':'0',
-	'周一':'1',
-	'周二':'2',
-	'周三':'3',
-	'周四':'4',
-	'周五':'5',
-	'周六':'6',
-};
-var currentDataPrice=[];
