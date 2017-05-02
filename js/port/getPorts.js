@@ -4,7 +4,7 @@ function getPorts(token){
 	$.ajax({
 		type:'POST',
 		async:false,
-		url:'http://106.14.251.28:8085/bizCenter/portService/getPorts',
+		url:'http://106.14.251.28:8185/bizCenter/portService/getPorts',
 		data:{
 			'accessToken':token,
 			'isHot':0,
@@ -23,7 +23,7 @@ function getHotPorts(token,fn){
 	$.ajax({
 		type:'POST',
 		async:false,
-		url:'http://106.14.251.28:8085/bizCenter/portService/getPorts',
+		url:'http://106.14.251.28:8185/bizCenter/portService/getPorts',
 		data:{
 			'accessToken':token,
 			'isHot':1,
@@ -44,7 +44,7 @@ function fuzzySearch(token,str,fn){
 	$.ajax({
 		type:'POST',
 		async:false,
-		url:'http://106.14.251.28:8085/bizCenter/portService/fuzzySearch',
+		url:'http://106.14.251.28:8185/bizCenter/portService/fuzzySearch',
 		data:{
 			'accessToken':token,
 			'codeHeader':str,

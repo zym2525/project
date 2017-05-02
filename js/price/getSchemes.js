@@ -7,7 +7,7 @@ function getBasicSchemes(currentPage,fn){
 		$.ajax({
 			type:'POST',
 			async:false,
-			url:'http://106.14.251.28:8085/bizCenter/schemeService/getBasicSchemes',
+			url:'http://106.14.251.28:8185/bizCenter/schemeService/getBasicSchemes',
 			data:{
 				'accessToken':getCookie('accessToken'),
 				'polCode':arr[0],
@@ -27,7 +27,7 @@ function getBasicSchemes(currentPage,fn){
 		$.ajax({
 			type:'POST',
 			async:false,
-			url:'http://106.14.251.28:8085/bizCenter/schemeService/getBasicSchemes',
+			url:'http://106.14.251.28:8185/bizCenter/schemeService/getBasicSchemes',
 			data:{
 				'accessToken':getCookie('accessToken'),
 				'polCode':arr[0],

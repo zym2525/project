@@ -34,7 +34,7 @@ $('footer>div:last-child').on('touchstart',function(){
 	var t=new Date().getTime();
 	$.ajax({
 		type:"post",
-		url:"http://106.14.251.28:8081/userCenter/userService/getUserInfo",
+		url:"http://106.14.251.28:8181/userCenter/userService/getUserInfo",
 		async:true,
 		data:{
 				'accessToken':getCookie('accessToken'),
@@ -61,7 +61,7 @@ $(document).on('touchstart','#exit',function(){
 	$.ajax({
 		type:'POST',
 		async:true,
-		url:'http://106.14.251.28:8081/userCenter/user/logout',
+		url:'http://106.14.251.28:8181/userCenter/user/logout',
 		data:{
 			'loginName':getCookie('loginName'),
 			'accessToken':getCookie('accessToken'),
@@ -112,7 +112,7 @@ $('#interface').on('touchstart','#confirm3',function(){
 	$.ajax({
 		type:'POST',
 		async:false,
-		url:'http://106.14.251.28:8081/userCenter/commonService/unlogin/applyRestPwd',
+		url:'http://106.14.251.28:8181/userCenter/commonService/unlogin/applyRestPwd',
 		data:{
 			'accessToken':getCookie('accessToken'),
 			'msgId':t+'',
@@ -194,7 +194,7 @@ $('#interface').on('touchstart','#save',function(){
 	$.ajax({
 		type:'POST',
 		async:false,
-		url:'http://106.14.251.28:8081/userCenter/userService/updateUserInfo',
+		url:'http://106.14.251.28:8181/userCenter/userService/updateUserInfo',
 		data:{
 			'accessToken':getCookie('accessToken'),
 			'msgId':t+'',

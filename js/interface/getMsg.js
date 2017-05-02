@@ -259,7 +259,7 @@ $(function(){
 						$.ajax({
 							type:'POST',
 							async:false,
-							url:'http://106.14.251.28:8085/bizCenter/enquiryService/cancelEnquiry',
+							url:'http://106.14.251.28:8185/bizCenter/enquiryService/cancelEnquiry',
 							data:{
 								'accessToken':getCookie('accessToken'),
 								'msgId':t+'',

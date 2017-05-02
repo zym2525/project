@@ -4,7 +4,7 @@ function getEnquirys(token,enquiryState,currentPage,fn,isBackward){
 	$.ajax({
 		type:'POST',
 		async:false,
-		url:'http://106.14.251.28:8085/bizCenter/enquiryService/getEnquirys',
+		url:'http://106.14.251.28:8185/bizCenter/enquiryService/getEnquirys',
 		data:{
 			'accessToken':token,
 			'enquiryStatus':enquiryState,
@@ -31,7 +31,7 @@ function getCarrys(fn){
 	$.ajax({
 		type:'POST',
 		async:false,
-		url:'http://106.14.251.28:8085/bizCenter/carryService/getCarrys',
+		url:'http://106.14.251.28:8185/bizCenter/carryService/getCarrys',
 		data:{
 			'accessToken':getCookie('accessToken'),
 			'msgId':t+'',

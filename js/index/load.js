@@ -6,7 +6,7 @@ window.onload=function(){
 		$.ajax({
 			type:'POST',
 			async:false,
-			url:'http://106.14.251.28:8081/userCenter/user/refreshToken',
+			url:'http://106.14.251.28:8181/userCenter/user/refreshToken',
 			data:{
 				'refreshToken':getCookie('refreshToken'),
 				'accessToken':getCookie('accessToken2'),
@@ -32,7 +32,7 @@ window.onload=function(){
 		$.ajax({
 			type:'POST',
 			async:false,
-			url:'http://106.14.251.28:8081/userCenter/user/refreshToken',
+			url:'http://106.14.251.28:8181/userCenter/user/refreshToken',
 			data:{
 				'refreshToken':getCookie('refreshToken'),
 				'accessToken':getCookie('accessToken'),
